@@ -1,0 +1,29 @@
+Cyclogram is stored in json format with the following fields:
+    name                         : Name of cyclogram
+    set1_elements, set2_elements : Sets of elements for relation
+    start_time, end_time         : Global time interval bounds
+    intervals                    : Time intervals for each element from relation.
+                                   Stored as matrix M, where M[i, j] contains list of
+                                        disjunctive intervals for pair (set1_elements[i], set2_elements[j]).
+                                   Each disjunctive interval is represented as Interval data type.
+
+Interval data type:
+    Interval is a Tuple [Bool, Float, Float, Bool], where
+        first and last values represent type of bound: True if closed and False if open;
+        second and third values represent numeric values of bounds.
+
+Fields data types:
+    name                         : String | Float
+    set1_elements, set2_elements : List<String | Int>
+    start_time, end_time         : Float
+    intervals                    : List<List<List<Interval>>>
+
+Template:
+    {
+        "name"          : ,
+        "set1_elements" : ,
+        "set2_elements" : ,
+        "start_time"    : ,
+        "end_time"      : ,
+        "intervals"     :
+    }

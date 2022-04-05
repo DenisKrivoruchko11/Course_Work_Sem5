@@ -1,0 +1,8 @@
+{
+  "set1_elements": ["A", "B"],
+  "set2_elements": ["a", "b"],
+  "start_time": 1,
+  "end_time": 10,
+  "intervals": [[[[true, 2, 9, true]],                  [[true, 3, 7, false]]],
+                [[[false, Infinity, -Infinity, false]], [[true, 1, 10, true]]]]
+}
