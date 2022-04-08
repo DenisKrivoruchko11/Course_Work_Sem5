@@ -26,7 +26,7 @@ class Canvas(FigureCanvas):
         if cyclogram:
             rectangle_height, vertical_space_height = 0.5, 0.5
             rows_count, columns_count = len(cyclogram.set1_elements), len(cyclogram.set2_elements)
-            x_ticks, y_ticks, y_ticks_labels = [], [], []
+            x_ticks, y_ticks, y_ticks_labels = set(), [], []
             h = vertical_space_height
             for row, column in product(range(rows_count - 1, -1, -1), range(columns_count - 1, -1, -1)):
                 y_ticks.append(h + rectangle_height / 2)
@@ -36,13 +36,13 @@ class Canvas(FigureCanvas):
                         self.ax.add_patch(Rectangle((interval.lower, h), interval.upper - interval.lower,
                                                     rectangle_height))
                         self.ax.axvline(x=interval.lower)
-                        x_ticks.append(interval.lower)
+                        x_ticks.add(interval.lower)
                         self.ax.axvline(x=interval.upper)
-                        x_ticks.append(interval.upper)
+                        x_ticks.add(interval.upper)
                 h += vertical_space_height + rectangle_height
 
             self.ax.set_title(cyclogram.name)
-            self.ax.set_xticks(x_ticks)
+            self.ax.set_xticks(list(x_ticks))
             self.ax.set_yticks(y_ticks)
             self.ax.set_yticklabels(y_ticks_labels if rows_count * columns_count < 30 else ['' for _ in y_ticks])
             self.ax.set_ylim((0, h))
