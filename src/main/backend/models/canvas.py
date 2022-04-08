@@ -30,7 +30,7 @@ class Canvas(FigureCanvas):
             h = vertical_space_height
             for row, column in product(range(rows_count), range(columns_count)):
                 y_ticks.append(h + rectangle_height / 2)
-                y_ticks_labels.append(f'{cyclogram.set1_elements[-row - 1]}*{cyclogram.set2_elements[-column - 1]}')
+                y_ticks_labels.append(f'<{cyclogram.set1_elements[-row - 1]}, {cyclogram.set2_elements[-column - 1]}>')
                 if not cyclogram.intervals[row][column].empty:
                     for interval in list(cyclogram.intervals[row][column]):
                         self.ax.add_patch(Rectangle((interval.lower, h), interval.upper - interval.lower,
