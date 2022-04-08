@@ -19,6 +19,7 @@ class MainView(QMainWindow):
         self.left, self.right = Canvas(self), Canvas(self)
         self.stack, self.current_state = [(None, None)], 0
 
+        self.setWindowTitle('Main')
         self.setMenuBar(configure_menu_bar(self))
         self.setCentralWidget(configure_central_widget(self, self.left, self.right))
 

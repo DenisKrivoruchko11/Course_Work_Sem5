@@ -12,6 +12,7 @@ class OperationResultView(QMainWindow):
         self.canvas = Canvas(self)
         self.canvas.draw_cyclogram(cyclogram)
 
+        self.setWindowTitle('Operation result')
         self.setCentralWidget(self.canvas)
         self.setMenuBar(configure_menu_bar(self))
 
