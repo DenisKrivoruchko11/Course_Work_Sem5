@@ -17,12 +17,12 @@ def set_theoretic_operation(x: Cyclogram, y: Cyclogram, name: str, f: Callable) 
 
 
 def union(x: Cyclogram, y: Cyclogram) -> Cyclogram:
-    return set_theoretic_operation(x, y, f'{x.name} | {y.name}', Interval.union)
+    return set_theoretic_operation(x, y, f'{x.name} & {y.name}', Interval.union)
 
 
 def intersection(x: Cyclogram, y: Cyclogram) -> Cyclogram:
-    return set_theoretic_operation(x, y, f'{x.name} & {y.name}', Interval.intersection)
+    return set_theoretic_operation(x, y, f'{x.name} /\\ {y.name}', Interval.intersection)
 
 
 def substraction(x: Cyclogram, y: Cyclogram) -> Cyclogram:
-    return set_theoretic_operation(x, y, f'{x.name} \\ {y.name}', Interval.difference)
+    return set_theoretic_operation(x, y, f'{x.name} - {y.name}', Interval.difference)
