@@ -1,1 +1,1 @@
-# CourseWorkSem5
+# Cyclograms viewer application
